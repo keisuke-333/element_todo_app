@@ -1,24 +1,21 @@
-# README
+## RailsとVue.jsで作成中のToDoアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 概要
 
-Things you may want to cover:
+Ruby on RailsとVue.jsを使用して、ToDoアプリを作成しております。
+Vue.jsのコンポーネントライブラリ、Element UI を使用しております。
+現在作成中のため未完成の状態です。
 
-* Ruby version
 
-* System dependencies
+### 開発環境
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- macOS Catalina 10.15.5
+- エディター：Visual Studio Code
+- ruby 2.6.6
+- rails 6.0.3.2
+- webpacker 4.2.2
+- Vue.js 2.6.11
+- Element UI 2.13.2
+- axios
+- PostgreSQL
+- ( turbolinks は使用しておりません)
