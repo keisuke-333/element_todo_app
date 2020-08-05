@@ -33,22 +33,24 @@ export default {
       },
     };
   },
-  createToDo() {
-    axios
-      .post("/api/v1/to_dos", {
-        to_do: { title: this.toDo.title, expired_at: this.toDo.expiredAt },
-      })
-      .then((res) => {
-        switch (res.status) {
-          case 201:
-            this.toDo = { title: "", expiredAt: "" };
-            this.$emit("close");
-            break;
-          case 400:
-            console.log(res.data.message);
-            break;
-        }
-      });
+  methods: {
+    createToDo() {
+      axios
+        .post("/api/v1/to_dos", {
+          to_do: { title: this.toDo.title, expired_at: this.toDo.expiredAt },
+        })
+        .then((res) => {
+          switch (res.status) {
+            case 201:
+              this.toDo = { title: "", expiredAt: "" };
+              this.$emit("close");
+              break;
+            case 400:
+              console.log(res.data.message);
+              break;
+          }
+        });
+    },
   },
 };
 </script>
