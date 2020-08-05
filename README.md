@@ -17,5 +17,6 @@ Vue.jsのコンポーネントライブラリ、Element UI を使用しており
 - Vue.js 2.6.11
 - Element UI 2.13.2
 - axios
+- lodash
 - PostgreSQL
 - ( turbolinks は使用しておりません)
