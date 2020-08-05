@@ -42,6 +42,7 @@ export default {
         switch (res.status) {
           case 201:
             this.toDo = { title: "", expiredAt: "" };
+            this.$emit("close");
             break;
           case 400:
             console.log(res.data.message);
