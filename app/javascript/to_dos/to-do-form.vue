@@ -14,7 +14,7 @@
       ></el-date-picker>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary">登録</el-button>
+      <el-button type="primary" @click="createToDo">登録</el-button>
       <el-button>キャンセル</el-button>
     </el-form-item>
   </el-form>
@@ -30,6 +30,22 @@ export default {
         finished: false,
       },
     };
+  },
+  createToDo() {
+    axios
+      .post("/api/v1/to_dos", {
+        to_do: { title: this.toDo.title, expired_at: this.toDo.expiredAt },
+      })
+      .then((res) => {
+        switch (res.status) {
+          case 201:
+            this.toDo = { title: "", expiredAt: "" };
+            break;
+          case 400:
+            console.log(res.data.message);
+            break;
+        }
+      });
   },
 };
 </script>
