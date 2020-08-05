@@ -69,6 +69,9 @@ export default {
     filter(toDos, finished) {
       return filter(toDos, ["finished", finished]);
     },
+    closeDialog() {
+      this.createToDoDialog = false;
+    },
   },
 };
 </script>
