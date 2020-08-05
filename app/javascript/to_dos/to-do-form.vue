@@ -15,7 +15,7 @@
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="createToDo">登録</el-button>
-      <el-button>キャンセル</el-button>
+      <el-button @click="$emit('close')">キャンセル</el-button>
     </el-form-item>
   </el-form>
 </template>
