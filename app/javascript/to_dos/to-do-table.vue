@@ -44,12 +44,14 @@ export default {
   props: ["toDos"],
   methods: {
     showInput(row, column, cell, event) {
-      let children = cell.firstElementChild.children;
-      children[0].classList.add("hidden");
-      children[1].classList.remove("hidden");
+      if (column.property === "title" || column.property === "expired_at") {
+        let children = cell.firstElementChild.children;
+        children[0].classList.add("hidden");
+        children[1].classList.remove("hidden");
 
-      let input = children[1].firstElementChild;
-      input.focus();
+        let input = children[1].firstElementChild;
+        input.focus();
+      }
     },
   },
 };
