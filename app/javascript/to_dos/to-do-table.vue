@@ -14,7 +14,18 @@
         <el-input class="hidden" v-model="scope.row.title"></el-input>
       </template>
     </el-table-column>
-    <el-table-column prop="expired_at"></el-table-column>
+    <el-table-column prop="expired_at">
+      <template slot-scope="scope">
+        <div>{{ scope.row.expired_at }}</div>
+        <el-date-picker
+          type="datetime"
+          format="yyyy/MM/dd HH:mm"
+          value-format="yyyy/MM/dd HH:mm"
+          class="hidden"
+          v-model="scope.row.expired_at"
+        ></el-date-picker>
+      </template>
+    </el-table-column>
     <el-table-column width="120">
       <template v-slot="scope">
         <el-button
