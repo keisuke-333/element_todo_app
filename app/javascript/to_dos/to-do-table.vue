@@ -2,16 +2,17 @@
   <el-table :data="toDos" style="width:100%" @cell-dblclick="showInput">
     <el-table-column prop="finished">
       <template v-slot="scope">
-        <el-checkbox
-          v-model="scope.row.finished"
-          @change="$emit('update',scope.row.id, scope.row.finished)"
-        ></el-checkbox>
+        <el-checkbox v-model="scope.row.finished" @change="$emit('update', scope.row)"></el-checkbox>
       </template>
     </el-table-column>
     <el-table-column prop="title">
       <template v-slot="scope">
         <div>{{ scope.row.title }}</div>
-        <el-input class="hidden" v-model="scope.row.title"></el-input>
+        <el-input
+          class="hidden"
+          v-model="scope.row.title"
+          @blur="$emit('update', scope.row); hideInput($event.target.parentNode)"
+        ></el-input>
       </template>
     </el-table-column>
     <el-table-column prop="expired_at">
@@ -23,6 +24,7 @@
           value-format="yyyy/MM/dd HH:mm"
           class="hidden"
           v-model="scope.row.expired_at"
+          @blur="$emit('update', scope.row); hideInput($event.$el)"
         ></el-date-picker>
       </template>
     </el-table-column>
@@ -52,6 +54,10 @@ export default {
         let input = children[1].firstElementChild;
         input.focus();
       }
+    },
+    hideInput(target) {
+      target.classList.add("hidden");
+      target.previousElementSibling.classList.remove("hidden");
     },
   },
 };
