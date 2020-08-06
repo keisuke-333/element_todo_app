@@ -8,7 +8,12 @@
         ></el-checkbox>
       </template>
     </el-table-column>
-    <el-table-column prop="title"></el-table-column>
+    <el-table-column prop="title">
+      <template v-slot="scope">
+        <div>{{ scope.row.title }}</div>
+        <el-input class="hidden" v-model="scope.row.title"></el-input>
+      </template>
+    </el-table-column>
     <el-table-column prop="expired_at"></el-table-column>
     <el-table-column width="120">
       <template v-slot="scope">
@@ -28,3 +33,9 @@ export default {
   props: ["toDos"],
 };
 </script>
+
+<style scoped>
+.hidden {
+  display: none;
+}
+</style>
