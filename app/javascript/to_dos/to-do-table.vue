@@ -31,6 +31,16 @@
 <script>
 export default {
   props: ["toDos"],
+  methods: {
+    showInput(row, column, cell, event) {
+      let children = cell.firstElementChild.children;
+      children[0].classList.add("hidden");
+      children[1].classList.remove("hidden");
+
+      let input = children[1].firstElementChild;
+      input.focus();
+    },
+  },
 };
 </script>
 
