@@ -1,10 +1,9 @@
-## RailsとVue.jsでToDoアプリを作成（作成中）
+## RailsとVue.jsでToDoアプリを作成
 
 ### 概要
 
-Ruby on RailsとVue.jsを使用して、ToDoアプリを作成しております。  
+Ruby on RailsとVue.jsを使用して、ToDoアプリを作成しました。  
 Vue.jsのコンポーネントライブラリ、Element UI を使用しております。  
-現在作成中のため未完成の状態です。
 
 
 ### 開発環境
