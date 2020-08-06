@@ -1,5 +1,5 @@
 <template>
-  <el-table :data="toDos" style="width:100%">
+  <el-table :data="toDos" style="width:100%" @cell-dblclick="showInput">
     <el-table-column prop="finished">
       <template v-slot="scope">
         <el-checkbox
