@@ -2,8 +2,8 @@
 
 ### 概要
 
-Ruby on RailsとVue.jsを使用して、ToDoアプリを作成しました。  
-Vue.jsのコンポーネントライブラリ、Element UI を使用しております。  
+`Ruby on Rails` と `Vue.js` を使用して、ToDoアプリを作成しました。  
+`Vue.js` のコンポーネントライブラリ、 `Element UI` を使用しております。  
 
 
 ### 開発環境
